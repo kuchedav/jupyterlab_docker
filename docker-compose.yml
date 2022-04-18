@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  jupyter:
+    image: jupyter:1.2
+    build: .
+    ports:
+      - "1111:1111"
+    volumes:
+      - myapp:/home/
+volumes:
+  myapp:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /Users/davidkuchelmeister/Documents/Projects_Coding/data 
